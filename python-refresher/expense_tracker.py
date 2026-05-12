@@ -3,6 +3,9 @@ print("💰 Expense Tracker (v5.1: dictionaries with functions)")
 
 
 def add_expense(expenses):
+    """
+    Add a new expense to the dictionary
+    """
     amount = float(input("  Amount: "))
     category = input("  Category: ")
     date = input("  Date (YYYY-MM-DD): ")
@@ -15,21 +18,34 @@ def add_expense(expenses):
 
 
 def list_expenses(expenses):
+    """
+    Show all expenses
+    """
     print(f"  You have {len(expenses)} expenses:")
     for e in expenses:
         print(f"  {e['date']:<12}{e['category']:<12}€{e['amount']:.2f}")
 
-
 def show_summary(expenses):
+    """
+    Show all the money spent by category and the overall total
+    """
+    tot, totByCat = totByCategory(expenses)
+    for cat, amount in totByCat.items():
+        print(f" {cat:<12} {amount:.2f}€")
+    print(f"{"Total":<12} {tot:.2f}€")
+
+def totByCategory(expenses):
+    """
+    Calculate all the totals spent by category
+    """
     totByCat = {}
     tot = 0
     for e in expenses:
         cat = e["category"]
         totByCat[cat] = totByCat.get(cat, 0) + e["amount"]
         tot += e["amount"]
-    for cat, amount in totByCat.items():
-        print(f" {cat:<12} {amount:.2f}€")
-    print(f"Total spent: {tot:.2f}€")
+    return tot, totByCat
+
 
 
 def main():
