@@ -12,7 +12,11 @@ def load_expenses():
     if not DATA_FILE.exists():
         return []
     with DATA_FILE.open("r", encoding="utf-8") as f:
-        return json.load(f)
+        try:
+            return json.load(f)
+        except json.JSONDecodeError:
+            print("⚠️  Couldn't read expenses file — starting fresh.")
+            return []
 
 
 def save_expenses(expenses):
@@ -25,7 +29,13 @@ def add_expense(expenses):
     """
     Add a new expense to the dictionary
     """
-    amount = float(input("  Amount: "))
+    try:
+        amount = float(input("Amount: "))
+        if(amount<=0):
+            raise ValueError
+    except ValueError:
+        print("❌ That's not a valid number — try again.")
+        return
     category = input("  Category: ")
     expense = {
         "amount": amount,
