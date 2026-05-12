@@ -1,5 +1,24 @@
-print("💰 Expense Tracker (v5.1: dictionaries with functions)")
+print("💰 Expense Tracker (v7: dictionaries with functions and libraries)")
+import json
+from datetime import datetime
+from pathlib import Path
 
+
+DATA_FILE = Path("expenses.json")
+
+
+def load_expenses():
+    """Load expenses from disk; return [] if the file doesn't exist."""
+    if not DATA_FILE.exists():
+        return []
+    with DATA_FILE.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_expenses(expenses):
+    """Write all expenses to disk as pretty JSON."""
+    with DATA_FILE.open("w", encoding="utf-8") as f:
+        json.dump(expenses, f, indent=2)
 
 
 def add_expense(expenses):
@@ -8,11 +27,10 @@ def add_expense(expenses):
     """
     amount = float(input("  Amount: "))
     category = input("  Category: ")
-    date = input("  Date (YYYY-MM-DD): ")
     expense = {
         "amount": amount,
         "category": category,
-        "date": date,
+        "date": datetime.now().strftime("%Y-%m-%d"),
     }
     expenses.append(expense)
 
@@ -49,13 +67,14 @@ def totByCategory(expenses):
 
 
 def main():
-    expenses = []
+    expenses = load_expenses()
+    print(f"Loaded {len(expenses)} expenses")
     menu = """
 What would you like to do?
   1) Add an expense
   2) List all expenses
   3) Show summary by category
-  4) Quit
+  4) Save and Quit
 """
     while True:
         print(menu)
@@ -68,6 +87,7 @@ What would you like to do?
         elif choice == "3":
             show_summary(expenses)
         elif choice == "4":
+            save_expenses(expenses)
             print("👋 Goodbye!")
             break
         else:
