@@ -1,0 +1,8 @@
+{
+  "users": [
+    {"name": "Alice",  "score": 87},
+    {"name": "Bob",    "score": 92},
+    {"name": "Carla",  "score": 99}
+  ],
+  "timestamp": "2026-05-12T09:30:00"
+}

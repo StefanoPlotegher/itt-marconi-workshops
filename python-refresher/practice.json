@@ -1,0 +1,17 @@
+[
+  {
+    "amount": 12.5,
+    "category": "food",
+    "date": "2026-05-10"
+  },
+  {
+    "amount": 45.0,
+    "category": "transport",
+    "date": "2026-05-11"
+  },
+  {
+    "amount": 8.0,
+    "category": "food",
+    "date": "2026-05-12"
+  }
+]
