@@ -1,4 +1,4 @@
-# 🧪 Lab 1 — Setup Colab e librerie scientifiche di base
+# Lab 1 — Setup Colab e librerie scientifiche di base
 
 ### UF-16 · ML & AI · Modulo 1 · Hands-on Lab
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 🎯 Obiettivi del lab
+## Obiettivi del lab
 
 Al termine di questo laboratorio sarai in grado di:
 
@@ -20,7 +20,7 @@ Tutti gli esercizi sono **autonomi**: puoi farli nell'ordine indicato o saltare 
 
 ---
 
-## 📦 Come usare questo lab
+## Come usare questo lab
 
 1. Vai su **[https://colab.research.google.com](https://colab.research.google.com)** e fai login con il tuo account Google.
 2. Crea un **nuovo notebook**: `File → Nuovo blocco note`.
@@ -29,23 +29,23 @@ Tutti gli esercizi sono **autonomi**: puoi farli nell'ordine indicato o saltare 
 5. Esegui ogni cella con `Shift + Invio`. La cella si esegue e la successiva diventa attiva.
 6. Quando hai finito: `File → Salva una copia in Drive` (oppure scarica il `.ipynb`).
 
-> 💡 **Suggerimento:** apri questo documento e Colab affiancati. In Colab le celle di testo (Markdown) ti aiutano a documentare ciò che stai facendo — usale per scrivere note tue.
+> **Suggerimento:** apri questo documento e Colab affiancati. In Colab le celle di testo (Markdown) ti aiutano a documentare ciò che stai facendo — usale per scrivere note tue.
 
 ---
 
-## 📋 Indice degli esercizi
+## Indice degli esercizi
 
-| #  | Titolo                                        | Durata  | Difficoltà |
+| # | Titolo | Durata | Difficoltà |
 |----|-----------------------------------------------|---------|------------|
-| 0  | Setup: primo Hello World su Colab             | 10 min  | ⭐          |
-| 1  | NumPy — array e operazioni vettorializzate    | 15 min  | ⭐          |
-| 2  | SciPy — statistiche e funzioni scientifiche   | 15 min  | ⭐⭐         |
-| 3  | matplotlib — visualizzazione dati             | 15 min  | ⭐⭐         |
-| 4  | pandas — DataFrame e analisi tabellare        | 20 min  | ⭐⭐         |
+| 0 | Setup: primo Hello World su Colab | 10 min | |
+| 1 | NumPy — array e operazioni vettorializzate | 15 min | |
+| 2 | SciPy — statistiche e funzioni scientifiche | 15 min | |
+| 3 | matplotlib — visualizzazione dati | 15 min | |
+| 4 | pandas — DataFrame e analisi tabellare | 20 min | |
 
 ---
 
-# 🔧 Step 0 — Setup: cos'è Colab e come si usa
+# Step 0 — Setup: cos'è Colab e come si usa
 
 ## Cos'è Google Colab
 
@@ -63,7 +63,7 @@ Non devi installare Python, né le librerie: tutto è già pronto in una macchin
 - I dati persistenti vanno salvati su Drive o scaricati.
 - Le sessioni gratuite hanno tempo massimo di ~12 ore.
 
-📚 **Reference ufficiale:** [Welcome to Colab](https://colab.research.google.com/notebooks/welcome.ipynb) · [Colab FAQ](https://research.google.com/colaboratory/faq.html)
+ **Reference ufficiale:** [Welcome to Colab](https://colab.research.google.com/notebooks/welcome.ipynb) · [Colab FAQ](https://research.google.com/colaboratory/faq.html)
 
 ## 0.1 — Hello World
 
@@ -78,7 +78,7 @@ print("Python version:", sys.version)
 
 Esegui con `Shift + Invio`.
 
-**✅ Checkpoint:** vedi la stringa stampata e la versione di Python (3.10+).
+** Checkpoint:** vedi la stringa stampata e la versione di Python (3.10+).
 
 ## 0.2 — Verifica le librerie pre-installate
 
@@ -91,14 +91,14 @@ import matplotlib
 import pandas as pd
 import sklearn
 
-print("numpy      :", np.__version__)
-print("scipy      :", scipy.__version__)
+print("numpy :", np.__version__)
+print("scipy :", scipy.__version__)
 print("matplotlib :", matplotlib.__version__)
-print("pandas     :", pd.__version__)
-print("sklearn    :", sklearn.__version__)
+print("pandas :", pd.__version__)
+print("sklearn :", sklearn.__version__)
 ```
 
-**✅ Checkpoint:** nessun errore di import e vedi le versioni stampate.
+** Checkpoint:** nessun errore di import e vedi le versioni stampate.
 
 ## 0.3 — Le celle Markdown
 
@@ -106,13 +106,13 @@ In Colab puoi inserire celle di **testo** (Markdown) per documentare il tuo lavo
 
 **Consegna:** aggiungi una cella di testo sopra le tue celle di codice con il titolo `# Lab 1 — Il mio notebook` e una breve descrizione di cosa farai.
 
-💡 **Lezione chiave:** un buon notebook alterna **codice eseguibile** e **narrazione**. Non è uno script: è un documento.
+ **Lezione chiave:** un buon notebook alterna **codice eseguibile** e **narrazione**. Non è uno script: è un documento.
 
-📚 **Approfondimento:** [Markdown guide in Colab](https://colab.research.google.com/notebooks/markdown_guide.ipynb)
+ **Approfondimento:** [Markdown guide in Colab](https://colab.research.google.com/notebooks/markdown_guide.ipynb)
 
 ---
 
-# 1️⃣ Esercizio 1 — NumPy: array e operazioni vettorializzate
+# Esercizio 1 — NumPy: array e operazioni vettorializzate
 
 ## Perché NumPy
 
@@ -120,7 +120,7 @@ NumPy è la **base di tutto lo stack scientifico Python**. Offre l'`ndarray`, un
 
 > **Tip:** scikit-learn, pandas, matplotlib usano NumPy "sotto il cofano". Saper manipolare un `ndarray` è propedeutico a qualunque task ML.
 
-📚 **Reference:**
+ **Reference:**
 - [NumPy quickstart](https://numpy.org/doc/stable/user/quickstart.html)
 - [NumPy absolute beginners guide](https://numpy.org/doc/stable/user/absolute_beginners.html)
 - [Cheat sheet NumPy (DataCamp)](https://www.datacamp.com/cheat-sheet/numpy-cheat-sheet-data-analysis-in-python)
@@ -147,7 +147,7 @@ print("ndim :", a.ndim)
 3. Crea un array `d` con **5 numeri equispaziati tra 0 e 1** usando `np.linspace`.
 4. Stampa shape e dtype di ognuno.
 
-**✅ Checkpoint:**
+** Checkpoint:**
 - `b.shape` deve essere `(10,)` e `b.dtype` `float64`.
 - `c[5]` deve essere `5`.
 - `d[0]` deve essere `0.0`, `d[-1]` deve essere `1.0`.
@@ -172,16 +172,16 @@ print(prezzi_con_iva)
 3. Trasforma `prezzi` da euro a dollari (assumi cambio 1 € = 1.08 $).
 4. Crea un nuovo array `sconto_30` che applica uno **sconto del 30%** a tutti i prezzi.
 
-**✅ Checkpoint:** la somma deve essere `64.6`. La media deve essere `12.92`.
+** Checkpoint:** la somma deve essere `64.6`. La media deve essere `12.92`.
 
 ## 1.3 — Slicing e indicizzazione
 
 **Codice di partenza:**
 
 ```python
-arr = np.arange(20)         # [0, 1, 2, ..., 19]
-print(arr[5:10])            # elementi dal 5° al 9°
-print(arr[arr > 10])        # boolean indexing
+arr = np.arange(20) # [0, 1, 2, ..., 19]
+print(arr[5:10]) # elementi dal 5° al 9°
+print(arr[arr > 10]) # boolean indexing
 ```
 
 **Il tuo compito:**
@@ -190,21 +190,21 @@ print(arr[arr > 10])        # boolean indexing
 3. Estrai solo gli elementi **pari** (suggerimento: `arr % 2 == 0`).
 4. Crea una **matrice 4×5** con `arr.reshape(4, 5)` e stampa la **seconda riga** e la **terza colonna**.
 
-**✅ Checkpoint:** la matrice ha shape `(4, 5)`. La seconda riga è `[5, 6, 7, 8, 9]`.
+** Checkpoint:** la matrice ha shape `(4, 5)`. La seconda riga è `[5, 6, 7, 8, 9]`.
 
-📚 **Approfondimento:** [NumPy indexing official docs](https://numpy.org/doc/stable/user/basics.indexing.html)
+ **Approfondimento:** [NumPy indexing official docs](https://numpy.org/doc/stable/user/basics.indexing.html)
 
-💡 **Lezione chiave:** se ti trovi a scrivere un `for` su un array NumPy, fermati. Quasi sempre esiste un'operazione vettorializzata equivalente, 10-100 volte più veloce.
+ **Lezione chiave:** se ti trovi a scrivere un `for` su un array NumPy, fermati. Quasi sempre esiste un'operazione vettorializzata equivalente, 10-100 volte più veloce.
 
 ---
 
-# 2️⃣ Esercizio 2 — SciPy: statistiche e funzioni scientifiche
+# Esercizio 2 — SciPy: statistiche e funzioni scientifiche
 
 ## Perché SciPy
 
 SciPy è costruito **sopra NumPy** e aggiunge funzioni scientifiche avanzate: statistica, ottimizzazione, integrazione, algebra lineare, segnali. In ML lo usiamo soprattutto per **`scipy.stats`** (distribuzioni, test).
 
-📚 **Reference:**
+ **Reference:**
 - [SciPy user guide](https://docs.scipy.org/doc/scipy/tutorial/index.html)
 - [scipy.stats reference](https://docs.scipy.org/doc/scipy/reference/stats.html)
 - [Cheat sheet SciPy (DataCamp)](https://www.datacamp.com/cheat-sheet/scipy-cheat-sheet-linear-algebra-in-python)
@@ -230,7 +230,7 @@ print(descr)
 2. Calcola **mediana**, **moda** e **range interquartile (IQR)**. (Suggerimenti: `np.median`, `stats.mode`, `stats.iqr`).
 3. Verifica se la media è "vicina" a 0 (entro ±0.1) e stampa un messaggio appropriato.
 
-**✅ Checkpoint:** `nobs` deve essere `1000`. Media ≈ `0.019`, varianza ≈ `0.98`.
+** Checkpoint:** `nobs` deve essere `1000`. Media ≈ `0.019`, varianza ≈ `0.98`.
 
 ## 2.2 — Distribuzioni di probabilità
 
@@ -244,7 +244,7 @@ import numpy as np
 
 # Distribuzione normale standard N(0, 1)
 x = 1.96
-prob = stats.norm.cdf(x)   # P(X <= 1.96)
+prob = stats.norm.cdf(x) # P(X <= 1.96)
 print(f"P(X <= {x}) =", prob)
 ```
 
@@ -254,7 +254,7 @@ print(f"P(X <= {x}) =", prob)
 3. Genera **500 campioni** da una distribuzione esponenziale con `scale=2` (suggerimento: `stats.expon.rvs(scale=2, size=500)`).
 4. Stampa media e dev std dei campioni generati.
 
-**✅ Checkpoint:** la prob al punto 1 deve essere ≈ `0.6827` (regola del 68%). Il valore critico al punto 2 deve essere ≈ `1.96`.
+** Checkpoint:** la prob al punto 1 deve essere ≈ `0.6827` (regola del 68%). Il valore critico al punto 2 deve essere ≈ `1.96`.
 
 ## 2.3 — Test statistico semplice (t-test)
 
@@ -272,7 +272,7 @@ gruppo_B = np.random.normal(loc=7.8, scale=1.5, size=50)
 
 t_stat, p_value = stats.ttest_ind(gruppo_A, gruppo_B)
 print(f"t-statistic = {t_stat:.3f}")
-print(f"p-value     = {p_value:.4f}")
+print(f"p-value = {p_value:.4f}")
 ```
 
 **Il tuo compito:**
@@ -280,19 +280,19 @@ print(f"p-value     = {p_value:.4f}")
 2. Cambia la `loc` del `gruppo_B` portandola a `7.05` (molto vicina ad A) e rilancia. Cosa succede al p-value?
 3. Stampa una frase in italiano del tipo: `"La differenza è significativa (p=...)"` oppure `"La differenza NON è significativa (p=...)"`.
 
-💡 **Lezione chiave:** SciPy ti permette di fare statistica seria con poche righe di codice. Ma ricorda: un p-value basso non significa "ho ragione", significa "se non ci fosse differenza, sarebbe raro osservare questo".
+ **Lezione chiave:** SciPy ti permette di fare statistica seria con poche righe di codice. Ma ricorda: un p-value basso non significa "ho ragione", significa "se non ci fosse differenza, sarebbe raro osservare questo".
 
-📚 **Approfondimento:** [Welch's t-test (Wikipedia)](https://en.wikipedia.org/wiki/Welch%27s_t-test) · [scipy.stats.ttest_ind docs](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
+ **Approfondimento:** [Welch's t-test (Wikipedia)](https://en.wikipedia.org/wiki/Welch%27s_t-test) · [scipy.stats.ttest_ind docs](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
 
 ---
 
-# 3️⃣ Esercizio 3 — matplotlib: visualizzare dati
+# Esercizio 3 — matplotlib: visualizzare dati
 
 ## Perché matplotlib
 
 `matplotlib` è la libreria **fondante** per visualizzare dati in Python. È usata sotto il cofano da pandas, seaborn e altre librerie più "moderne". Sapere matplotlib di base è obbligatorio.
 
-📚 **Reference:**
+ **Reference:**
 - [matplotlib pyplot tutorial](https://matplotlib.org/stable/tutorials/pyplot.html)
 - [Gallery di esempi](https://matplotlib.org/stable/gallery/index.html)
 - [Cheat sheet matplotlib (DataCamp)](https://www.datacamp.com/cheat-sheet/matplotlib-cheat-sheet-plotting-in-python)
@@ -322,7 +322,7 @@ plt.show()
 2. Aggiungi una **legenda** che distingua le due curve (suggerimento: `label=...` + `plt.legend()`).
 3. Cambia colori e stili di linea (es. `color='red', linestyle='--'`).
 
-**✅ Checkpoint:** vedi due curve, una per sin e una per cos, con legenda visibile.
+** Checkpoint:** vedi due curve, una per sin e una per cos, con legenda visibile.
 
 ## 3.2 — Scatter plot con colori per classe
 
@@ -337,7 +337,7 @@ import matplotlib.pyplot as plt
 np.random.seed(1)
 x = np.random.randn(100)
 y = np.random.randn(100)
-classi = np.random.randint(0, 3, 100)    # 0, 1, 2
+classi = np.random.randint(0, 3, 100) # 0, 1, 2
 
 plt.figure(figsize=(7, 6))
 plt.scatter(x, y, c=classi, cmap='viridis', s=60, alpha=0.7)
@@ -353,7 +353,7 @@ plt.show()
 2. Cambia la `cmap` in `'plasma'`, `'coolwarm'`, `'Set1'`. Quale ti piace di più?
 3. Aggiungi una griglia con `plt.grid(True, alpha=0.3)`.
 
-**✅ Checkpoint:** vedi 100 punti colorati e la barra dei colori a destra.
+** Checkpoint:** vedi 100 punti colorati e la barra dei colori a destra.
 
 ## 3.3 — Istogramma di una distribuzione
 
@@ -364,7 +364,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 np.random.seed(42)
-dati = np.random.normal(loc=170, scale=10, size=1000)   # altezza in cm
+dati = np.random.normal(loc=170, scale=10, size=1000) # altezza in cm
 
 plt.figure(figsize=(8, 4))
 plt.hist(dati, bins=30, color='steelblue', edgecolor='white')
@@ -381,7 +381,7 @@ plt.show()
 2. Aggiungi una **seconda linea verticale** per la mediana (in verde tratteggiato).
 3. (Bonus) Sovrapponi una curva di densità teorica della distribuzione normale.
 
-**✅ Checkpoint:** la media stampata in legenda è ≈ `170.4`.
+** Checkpoint:** la media stampata in legenda è ≈ `170.4`.
 
 ## 3.4 — Subplot: più grafici in una figura
 
@@ -395,10 +395,10 @@ x = np.linspace(0, 2 * np.pi, 100)
 
 fig, axes = plt.subplots(2, 2, figsize=(10, 7))
 
-axes[0, 0].plot(x, np.sin(x));     axes[0, 0].set_title("sin")
-axes[0, 1].plot(x, np.cos(x));     axes[0, 1].set_title("cos")
-axes[1, 0].plot(x, np.tan(x));     axes[1, 0].set_title("tan");      axes[1, 0].set_ylim(-5, 5)
-axes[1, 1].plot(x, np.exp(-x));    axes[1, 1].set_title("exp(-x)")
+axes[0, 0].plot(x, np.sin(x)); axes[0, 0].set_title("sin")
+axes[0, 1].plot(x, np.cos(x)); axes[0, 1].set_title("cos")
+axes[1, 0].plot(x, np.tan(x)); axes[1, 0].set_title("tan"); axes[1, 0].set_ylim(-5, 5)
+axes[1, 1].plot(x, np.exp(-x)); axes[1, 1].set_title("exp(-x)")
 
 fig.suptitle("Quattro funzioni in una figura", fontsize=14)
 plt.tight_layout()
@@ -410,19 +410,19 @@ plt.show()
 2. Sostituisci una delle funzioni con `x**2` o `np.log(x + 1)`.
 3. Aggiungi una griglia (`.grid(True)`) a tutti i subplot.
 
-💡 **Lezione chiave:** la **leggibilità** del grafico è più importante della complessità. Un grafico chiaro vince sempre su uno "fancy".
+ **Lezione chiave:** la **leggibilità** del grafico è più importante della complessità. Un grafico chiaro vince sempre su uno "fancy".
 
-📚 **Approfondimento:** [Anatomy of a matplotlib figure](https://matplotlib.org/stable/gallery/showcase/anatomy.html)
+ **Approfondimento:** [Anatomy of a matplotlib figure](https://matplotlib.org/stable/gallery/showcase/anatomy.html)
 
 ---
 
-# 4️⃣ Esercizio 4 — pandas: DataFrame e analisi tabellare
+# Esercizio 4 — pandas: DataFrame e analisi tabellare
 
 ## Perché pandas
 
 `pandas` è lo strumento standard per **manipolare dati tabellari** in Python. Pensa a un foglio Excel programmabile: leggi file CSV/Excel, fai query SQL-like, raggruppi, pulisci, esporti.
 
-📚 **Reference:**
+ **Reference:**
 - [pandas getting started](https://pandas.pydata.org/docs/getting_started/index.html)
 - [10 minutes to pandas](https://pandas.pydata.org/docs/user_guide/10min.html)
 - [Cheat sheet pandas (ufficiale, PDF)](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
@@ -435,10 +435,10 @@ plt.show()
 import pandas as pd
 
 dati = {
-    "nome":   ["Alice", "Bob", "Carla", "Davide", "Elena", "Fabio"],
-    "eta":    [25, 32, 41, 29, 35, 50],
-    "citta":  ["Milano", "Roma", "Milano", "Napoli", "Roma", "Milano"],
-    "stipendio": [32000, 45000, 52000, 38000, 47000, 60000],
+ "nome": ["Alice", "Bob", "Carla", "Davide", "Elena", "Fabio"],
+ "eta": [25, 32, 41, 29, 35, 50],
+ "citta": ["Milano", "Roma", "Milano", "Napoli", "Roma", "Milano"],
+ "stipendio": [32000, 45000, 52000, 38000, 47000, 60000],
 }
 df = pd.DataFrame(dati)
 print(df)
@@ -454,7 +454,7 @@ print(df.describe())
 3. Stampa i **nomi delle colonne** con `df.columns.tolist()`.
 4. Stampa **media** e **mediana** dello stipendio.
 
-**✅ Checkpoint:** `df.shape` deve essere `(6, 4)`. Media stipendio = `45666.67`.
+** Checkpoint:** `df.shape` deve essere `(6, 4)`. Media stipendio = `45666.67`.
 
 ## 4.2 — Selezione e filtri
 
@@ -477,7 +477,7 @@ print(df[df["stipendio"] > 40000])
 3. Estrai chi guadagna **più della media** (usa `df["stipendio"].mean()`).
 4. Estrai **nome e città** delle persone più giovani di 35.
 
-**✅ Checkpoint:** il filtro Milano restituisce 3 righe.
+** Checkpoint:** il filtro Milano restituisce 3 righe.
 
 ## 4.3 — Group-by e aggregazioni
 
@@ -497,7 +497,7 @@ print(medie)
 3. Per ogni città, calcola **insieme** media e dev std dello stipendio (suggerimento: `.agg(["mean", "std"])`).
 4. (Bonus) Ordina le città dalla media stipendio più alta alla più bassa.
 
-**✅ Checkpoint:** la città con stipendio medio più alto è **Milano** (≈ `48000`).
+** Checkpoint:** la città con stipendio medio più alto è **Milano** (≈ `48000`).
 
 ## 4.4 — Aggiungere colonne e modificare dati
 
@@ -509,9 +509,9 @@ df["stipendio_netto"] = df["stipendio"] * 0.70
 
 # Categoria di età
 df["fascia_eta"] = pd.cut(
-    df["eta"],
-    bins=[0, 30, 40, 100],
-    labels=["giovane", "medio", "senior"]
+ df["eta"],
+ bins=[0, 30, 40, 100],
+ labels=["giovane", "medio", "senior"]
 )
 
 print(df)
@@ -544,36 +544,36 @@ print(titanic.info())
 4. Calcola la **percentuale di sopravvivenza per classe di biglietto** (`Pclass`). Cosa noti?
 5. (Bonus) Stesso calcolo ma per **sesso** (`Sex`). Cosa noti?
 
-**✅ Checkpoint:** il dataset ha `891` righe. La sopravvivenza media è ≈ `38.4%`. Le donne sopravvivono molto più degli uomini.
+** Checkpoint:** il dataset ha `891` righe. La sopravvivenza media è ≈ `38.4%`. Le donne sopravvivono molto più degli uomini.
 
-💡 **Lezione chiave:** in un progetto ML reale, **il 70% del lavoro è in pandas**: caricare, pulire, esplorare, trasformare. Padroneggiarlo è un investimento ad alto ROI.
+ **Lezione chiave:** in un progetto ML reale, **il 70% del lavoro è in pandas**: caricare, pulire, esplorare, trasformare. Padroneggiarlo è un investimento ad alto ROI.
 
-📚 **Approfondimento:** [Kaggle Titanic competition](https://www.kaggle.com/c/titanic) — il caso d'uso classico per imparare il workflow ML end-to-end.
+ **Approfondimento:** [Kaggle Titanic competition](https://www.kaggle.com/c/titanic) — il caso d'uso classico per imparare il workflow ML end-to-end.
 
 ---
 
-# 🎓 Riepilogo
+# Riepilogo
 
 Dopo questo lab dovresti saper rispondere a queste domande:
 
-| #  | Domanda                                                              | Risposta in una riga                                  |
+| # | Domanda | Risposta in una riga |
 |----|----------------------------------------------------------------------|--------------------------------------------------------|
-| 1  | A cosa serve Colab?                                                  | Esegue notebook Python nel cloud senza setup locale.   |
-| 2  | Qual è la differenza tra una lista Python e un `ndarray` NumPy?      | L'`ndarray` è omogeneo, vettorializzato e molto più veloce. |
-| 3  | Cosa fa `scipy.stats.ttest_ind`?                                     | Confronta le medie di due campioni indipendenti.       |
-| 4  | A cosa serve `plt.subplots`?                                         | Creare più grafici nella stessa figura.                |
-| 5  | A cosa serve `groupby` in pandas?                                    | Raggruppare righe e calcolare aggregati per gruppo.    |
+| 1 | A cosa serve Colab? | Esegue notebook Python nel cloud senza setup locale. |
+| 2 | Qual è la differenza tra una lista Python e un `ndarray` NumPy? | L'`ndarray` è omogeneo, vettorializzato e molto più veloce. |
+| 3 | Cosa fa `scipy.stats.ttest_ind`? | Confronta le medie di due campioni indipendenti. |
+| 4 | A cosa serve `plt.subplots`? | Creare più grafici nella stessa figura. |
+| 5 | A cosa serve `groupby` in pandas? | Raggruppare righe e calcolare aggregati per gruppo. |
 
 ---
 
-## 🧰 Comandi di riferimento rapido
+## Comandi di riferimento rapido
 
 ```python
 # === NumPy ===
-np.array([1, 2, 3])             # crea array da lista
-np.arange(10)                   # 0..9
-np.linspace(0, 1, 5)            # 5 valori equispaziati tra 0 e 1
-arr.reshape(2, 3)               # cambia forma
+np.array([1, 2, 3]) # crea array da lista
+np.arange(10) # 0..9
+np.linspace(0, 1, 5) # 5 valori equispaziati tra 0 e 1
+arr.reshape(2, 3) # cambia forma
 arr.mean(), arr.std(), arr.sum()
 
 # === SciPy ===
@@ -584,7 +584,7 @@ stats.ttest_ind(a, b)
 
 # === matplotlib ===
 import matplotlib.pyplot as plt
-plt.plot(x, y);  plt.show()
+plt.plot(x, y); plt.show()
 plt.scatter(x, y, c=labels)
 plt.hist(dati, bins=30)
 fig, axes = plt.subplots(2, 2)
@@ -592,7 +592,7 @@ fig, axes = plt.subplots(2, 2)
 # === pandas ===
 import pandas as pd
 df = pd.read_csv("file.csv")
-df.head();  df.info();  df.describe()
+df.head(); df.info(); df.describe()
 df[df["col"] > 10]
 df.groupby("categoria")["valore"].mean()
 df["nuova"] = df["a"] + df["b"]
@@ -600,27 +600,27 @@ df["nuova"] = df["a"] + df["b"]
 
 ---
 
-## 📚 Risorse e link utili
+## Risorse e link utili
 
-| Argomento     | Link                                                                                              |
+| Argomento | Link |
 |---------------|---------------------------------------------------------------------------------------------------|
-| Colab tour    | [Welcome to Colab](https://colab.research.google.com/notebooks/welcome.ipynb)                     |
-| Colab FAQ     | [Colab FAQ](https://research.google.com/colaboratory/faq.html)                                    |
-| NumPy guide   | [Absolute beginners](https://numpy.org/doc/stable/user/absolute_beginners.html)                   |
-| NumPy quickstart | [Quickstart](https://numpy.org/doc/stable/user/quickstart.html)                                |
-| SciPy tutorial | [SciPy user guide](https://docs.scipy.org/doc/scipy/tutorial/index.html)                         |
-| scipy.stats   | [API reference](https://docs.scipy.org/doc/scipy/reference/stats.html)                            |
-| matplotlib pyplot | [Pyplot tutorial](https://matplotlib.org/stable/tutorials/pyplot.html)                        |
-| matplotlib gallery | [Examples](https://matplotlib.org/stable/gallery/index.html)                                 |
-| pandas 10-min | [10 minutes to pandas](https://pandas.pydata.org/docs/user_guide/10min.html)                      |
-| pandas cheat sheet | [PDF ufficiale](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)                            |
-| Jupyter docs  | [Jupyter Notebook docs](https://jupyter-notebook.readthedocs.io/en/stable/)                       |
-| Kaggle Titanic | [Tutorial competition](https://www.kaggle.com/c/titanic)                                         |
+| Colab tour | [Welcome to Colab](https://colab.research.google.com/notebooks/welcome.ipynb) |
+| Colab FAQ | [Colab FAQ](https://research.google.com/colaboratory/faq.html) |
+| NumPy guide | [Absolute beginners](https://numpy.org/doc/stable/user/absolute_beginners.html) |
+| NumPy quickstart | [Quickstart](https://numpy.org/doc/stable/user/quickstart.html) |
+| SciPy tutorial | [SciPy user guide](https://docs.scipy.org/doc/scipy/tutorial/index.html) |
+| scipy.stats | [API reference](https://docs.scipy.org/doc/scipy/reference/stats.html) |
+| matplotlib pyplot | [Pyplot tutorial](https://matplotlib.org/stable/tutorials/pyplot.html) |
+| matplotlib gallery | [Examples](https://matplotlib.org/stable/gallery/index.html) |
+| pandas 10-min | [10 minutes to pandas](https://pandas.pydata.org/docs/user_guide/10min.html) |
+| pandas cheat sheet | [PDF ufficiale](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) |
+| Jupyter docs | [Jupyter Notebook docs](https://jupyter-notebook.readthedocs.io/en/stable/) |
+| Kaggle Titanic | [Tutorial competition](https://www.kaggle.com/c/titanic) |
 
 ---
 
-## ✅ Cosa consegnare
+## Cosa consegnare
 
 Salva il tuo notebook con il nome `Lab1_<Cognome>_<Nome>.ipynb` e caricalo nello spazio condiviso del corso.
 
-> 🙌 **Buon lavoro!** Se ti blocchi, alza la mano oppure scrivi nel canale del corso. Il file di **demo del formatore** (`Lab1_demo_instructor.ipynb`) è disponibile dopo il lab come riferimento.
+> **Buon lavoro!** Se ti blocchi, alza la mano oppure scrivi nel canale del corso. Il file di **demo del formatore** (`Lab1_demo_instructor.ipynb`) è disponibile dopo il lab come riferimento.

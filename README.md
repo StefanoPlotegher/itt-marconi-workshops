@@ -18,7 +18,7 @@ Build a **Personal Expense Tracker** CLI app incrementally, one Python concept a
 | 7–8  | `json`, `datetime`, `pathlib`, file I/O |
 | 9    | `try`/`except` (bonus) |
 
-→ See [`Lab0_README.md`](./Lab0_README.md)
+See [`Lab0_README.md`](./Lab0_README.md)
 
 ---
 
@@ -36,7 +36,7 @@ Introduzione allo stack scientifico Python su Google Colab. Nessuna installazion
 | 3 | matplotlib: line plot, scatter, istogramma, subplot |
 | 4 | pandas: DataFrame, filtri, group-by, CSV reale (Titanic) |
 
-→ See [`Lab1_README.md`](./Lab1_README.md)
+See [`Lab1_README.md`](./Lab1_README.md)
 
 ---
 
@@ -55,4 +55,24 @@ Primo workflow ML end-to-end con scikit-learn: dall'esplorazione dei dati alla v
 | 2.6 | Accuracy, confusion matrix, classification report |
 | 2.7 | Tuning dell'iperparametro `k`, trade-off bias/varianza |
 
-→ See [`Lab2_README.md`](./Lab2_README.md)
+See [`Lab2_README.md`](./Lab2_README.md)
+
+---
+
+## Lab 3 — Prima applicazione ML: regressione con il dataset Boston Housing
+
+**Livello:** Beginner · **Durata:** ~90 min · **Ambiente:** Google Colab · **Linguaggio:** Python 3
+
+Primo workflow ML di regressione end-to-end con scikit-learn: dal caricamento dei dati alla valutazione e al tuning degli iperparametri.
+
+| Task | Argomento |
+|------|-----------|
+| 1 | API scikit-learn per la regressione: Estimator, `fit`, `predict`, `score` |
+| 2.1–2.2 | Dataset Boston Housing: caricamento, esplorazione, correlazioni, scatter plot |
+| 2.3 | Train/test split |
+| 2.4 | Addestramento regressione lineare e coefficienti |
+| 2.5 | Predizioni e analisi dei residui |
+| 2.6 | Metriche di regressione: MAE, MSE, RMSE, R² |
+| 2.7 | Tuning iperparametri: Ridge, Lasso, Decision Tree Regressor |
+
+See [`Lab3_README.md`](./Lab3_README.md)

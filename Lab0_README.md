@@ -1,4 +1,4 @@
-# 🐍 Python Refresher — Build Your First Real App
+# Python Refresher — Build Your First Real App
 
 ### Hands-on Workshop · Eleventh Training
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 🎯 What you'll build
+## What you'll build
 
 You'll build a **Personal Expense Tracker** — a small command-line application in pure Python that lets you:
 
@@ -31,13 +31,13 @@ By the end of the 2 hours, you'll have a fully working CLI app and a refreshed g
 
 ---
 
-## 🧰 Setup before we start (10 min)
+## Setup before we start (10 min)
 
 You need:
 
 - **Python 3.10 or newer** installed locally
-  Check with: `python3 --version`
-  If missing, install from [python.org/downloads](https://www.python.org/downloads/) or use [Anaconda](https://www.anaconda.com/download).
+ Check with: `python3 --version`
+ If missing, install from [python.org/downloads](https://www.python.org/downloads/) or use [Anaconda](https://www.anaconda.com/download).
 - **A text editor** — VS Code is recommended ([code.visualstudio.com](https://code.visualstudio.com/)) with the Python extension. Any editor works.
 - **A terminal** — Terminal on macOS/Linux, PowerShell or Windows Terminal on Windows.
 
@@ -46,7 +46,7 @@ You need:
 ```bash
 mkdir python-refresher
 cd python-refresher
-code .          # opens VS Code in the current folder (optional)
+code . # opens VS Code in the current folder (optional)
 ```
 
 ### Create a virtual environment
@@ -68,9 +68,9 @@ Once active, your prompt should change to something like `(.venv) $`.
 Check you're using the right Python:
 
 ```bash
-which python      # macOS/Linux  — should point inside .venv
-where python      # Windows
-python --version  # should be 3.10+
+which python # macOS/Linux — should point inside .venv
+where python # Windows
+python --version # should be 3.10+
 ```
 
 To leave the venv when you're done: `deactivate`.
@@ -102,17 +102,17 @@ Anyone else who clones your project then runs:
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate    # or .venv\Scripts\Activate.ps1 on Windows
+source .venv/bin/activate # or .venv\Scripts\Activate.ps1 on Windows
 pip install -r requirements.txt
 ```
 
 …and they have an identical environment in seconds.
 
-> 💡 **No internet?** No problem. We use only the Python standard library throughout this workshop — `requirements.txt` will stay empty, but the *habit* of creating it is what matters.
+> **No internet?** No problem. We use only the Python standard library throughout this workshop — `requirements.txt` will stay empty, but the *habit* of creating it is what matters.
 
-> ⚠️ **Common pitfall:** if you forget to activate the venv, `pip install` will install **globally**, polluting your system Python. Always check the prompt shows `(.venv)` before running `pip`.
+> **Common pitfall:** if you forget to activate the venv, `pip install` will install **globally**, polluting your system Python. Always check the prompt shows `(.venv)` before running `pip`.
 
-> 📚 **References used in this workshop:**
+> **References used in this workshop:**
 > [The Python Tutorial](https://docs.python.org/3/tutorial/) ·
 > [Python Standard Library](https://docs.python.org/3/library/) ·
 > [venv module](https://docs.python.org/3/library/venv.html) ·
@@ -122,29 +122,29 @@ pip install -r requirements.txt
 
 ---
 
-## 📋 Workshop tasks
+## Workshop tasks
 
-| #  | Title                                        | Concept introduced               | Time  |
+| # | Title | Concept introduced | Time |
 |----|----------------------------------------------|----------------------------------|-------|
-| 0  | Hello, Python                                | Running a script, `print`        | 10 min |
-| 1  | Storing a single expense                     | Data types and collections       | 15 min |
-| 2  | Talking to the user                          | `input`, strings, f-strings      | 15 min |
-| 3  | Tracking many expenses                       | Lists                            | 15 min |
-| 4  | A menu that keeps running                    | `while`, `if`, `for`             | 20 min |
-| 5  | Expenses with structure                      | Dictionaries                     | 15 min |
-| 6  | Clean code: functions                        | Functions, parameters, returns   | 20 min |
-| 7  | Save and load with JSON                      | Modules and file I/O             | 15 min |
-| 8  | The `json` library in depth                  | `dumps`/`loads`, external JSON   | 15 min |
-| 9  | Bonus — Handle the unexpected                | `try` / `except`                 | optional |
+| 0 | Hello, Python | Running a script, `print` | 10 min |
+| 1 | Storing a single expense | Data types and collections | 15 min |
+| 2 | Talking to the user | `input`, strings, f-strings | 15 min |
+| 3 | Tracking many expenses | Lists | 15 min |
+| 4 | A menu that keeps running | `while`, `if`, `for` | 20 min |
+| 5 | Expenses with structure | Dictionaries | 15 min |
+| 6 | Clean code: functions | Functions, parameters, returns | 20 min |
+| 7 | Save and load with JSON | Modules and file I/O | 15 min |
+| 8 | The `json` library in depth | `dumps`/`loads`, external JSON | 15 min |
+| 9 | Bonus — Handle the unexpected | `try` / `except` | optional |
 
 > **Tip:** every task includes the **starter code** to paste, the **task** to complete, a **checkpoint** to confirm it works, and a **key takeaway**.
 > If you fall behind, just open the next task's starter and keep going — every task is self-contained.
 
-> ⏱️ **Time budget:** the tasks above sum to ~2h 30min including a 10-min setup. If you're tight on the original 2 hours, Task 8 and Task 9 are optional — Tasks 0-7 alone form a complete working program.
+> **Time budget:** the tasks above sum to ~2h 30min including a 10-min setup. If you're tight on the original 2 hours, Task 8 and Task 9 are optional — Tasks 0-7 alone form a complete working program.
 
 ---
 
-# Task 0 — Hello, Python ⏱ 10 min
+# Task 0 — Hello, Python 10 min
 
 ## Concept
 
@@ -156,7 +156,7 @@ You run it from the terminal with `python3`.
 Create a file called `expense_tracker.py` with **this single line**:
 
 ```python
-print("💰 Expense Tracker v0 — hello!")
+print(" Expense Tracker v0 — hello!")
 ```
 
 ## Your task
@@ -167,28 +167,28 @@ print("💰 Expense Tracker v0 — hello!")
 4. Add a second `print` call below the first that prints your name.
 5. Run again.
 
-## ✅ Checkpoint
+## Checkpoint
 
 You should see something like:
 
 ```
-💰 Expense Tracker v0 — hello!
+ Expense Tracker v0 — hello!
 My name is Paolo
 ```
 
 If you get `command not found: python3`, try `python` instead (on Windows) or check that Python is on your PATH.
 
-## 💡 Key takeaway
+## Key takeaway
 
 - A `.py` file is a script. Lines are executed top to bottom.
 - `print(...)` is the simplest way to show output.
 - Strings can be wrapped in single `'...'` or double `"..."` quotes — pick one and stick with it.
 
-📚 [print() docs](https://docs.python.org/3/library/functions.html#print) · [Running Python](https://docs.python.org/3/tutorial/interpreter.html)
+ [print() docs](https://docs.python.org/3/library/functions.html#print) · [Running Python](https://docs.python.org/3/tutorial/interpreter.html)
 
 ---
 
-# Task 1 — Storing a single expense ⏱ 15 min
+# Task 1 — Storing a single expense 15 min
 
 ## Concept
 
@@ -196,24 +196,24 @@ Python has two families of built-in types you need to know cold.
 
 ### Scalar (primitive) types — hold one value
 
-| Type    | Example          | What it represents       |
+| Type | Example | What it represents |
 |---------|------------------|--------------------------|
-| `int`   | `42`             | Whole numbers            |
-| `float` | `12.50`          | Decimal numbers          |
-| `str`   | `"food"`         | Text                     |
-| `bool`  | `True`, `False`  | Yes/no values            |
-| `None`  | `None`           | "Nothing here"           |
+| `int` | `42` | Whole numbers |
+| `float` | `12.50` | Decimal numbers |
+| `str` | `"food"` | Text |
+| `bool` | `True`, `False` | Yes/no values |
+| `None` | `None` | "Nothing here" |
 
 ### Collection types — hold many values
 
-| Type    | Example                                  | Key property                    |
+| Type | Example | Key property |
 |---------|------------------------------------------|---------------------------------|
-| `list`  | `[1, 2, 3]`                              | Ordered, **mutable**, duplicates OK |
-| `tuple` | `(1, 2, 3)`                              | Ordered, **immutable**, duplicates OK |
-| `set`   | `{1, 2, 3}`                              | Unordered, mutable, **unique** values |
-| `dict`  | `{"name": "Paolo", "age": 40}`           | Key → value mapping (Task 5)    |
+| `list` | `[1, 2, 3]` | Ordered, **mutable**, duplicates OK |
+| `tuple` | `(1, 2, 3)` | Ordered, **immutable**, duplicates OK |
+| `set` | `{1, 2, 3}` | Unordered, mutable, **unique** values |
+| `dict` | `{"name": "Paolo", "age": 40}` | Key → value mapping (Task 5) |
 
-> 🧠 **Pythonic note:** there's no separate "array" type for general use — `list` *is* Python's array. (A specialized `array.array` module exists for tight numeric arrays, and `numpy.array` for scientific computing, but for everyday code you reach for `list`.)
+> **Pythonic note:** there's no separate "array" type for general use — `list` *is* Python's array. (A specialized `array.array` module exists for tight numeric arrays, and `numpy.array` for scientific computing, but for everyday code you reach for `list`.)
 
 Variables are created by assignment: `name = value`. You **don't declare types** — Python figures them out at runtime.
 
@@ -223,11 +223,11 @@ Replace your current code with:
 
 ```python
 # === Scalar types — one value each ===
-amount = 12.50          # float
-category = "food"       # str
-date = "2026-05-12"     # str
-is_recurring = False    # bool
-notes = None            # NoneType
+amount = 12.50 # float
+category = "food" # str
+date = "2026-05-12" # str
+is_recurring = False # bool
+notes = None # NoneType
 
 print(amount, category, date, is_recurring, notes)
 print(type(amount), type(category), type(is_recurring), type(notes))
@@ -258,7 +258,7 @@ print("Unique categories:", unique_categories)
 5. Add `len(...)` calls to print the length of `tags`, `expense_record`, and `unique_categories`.
 6. **Bonus:** create a tuple with **a single element** — try `(5)` and then `(5,)`. Use `type()` to see the difference. (This is a classic Python gotcha.)
 
-## ✅ Checkpoint
+## Checkpoint
 
 ```
 12.5 food 2026-05-12 False None
@@ -267,7 +267,7 @@ First tag: lunch
 After append: ['lunch', 'weekday', 'card-payment', 'urgent']
 Tuple: (12.5, 'food', '2026-05-12')
 Amount from tuple: 12.5
-Unique categories: {'food', 'transport', 'rent'}     # order may vary
+Unique categories: {'food', 'transport', 'rent'} # order may vary
 ```
 
 When you try `expense_record[0] = 99.99` you should see:
@@ -275,25 +275,25 @@ When you try `expense_record[0] = 99.99` you should see:
 TypeError: 'tuple' object does not support item assignment
 ```
 
-## 💡 Key takeaway
+## Key takeaway
 
 - Python is **dynamically typed**: a variable's type comes from the value you assign to it.
 - **Scalar types** hold one value; **collection types** hold many.
 - Choose your collection by **intent**:
-  - `list` → an ordered sequence you'll grow/change → 90% of cases.
-  - `tuple` → a small fixed record (a returned pair, a coordinate, a config row).
-  - `set` → uniqueness or membership tests (`"food" in cats`) — extremely fast.
-  - `dict` → a record with named fields → coming in Task 5.
+ - `list` → an ordered sequence you'll grow/change → 90% of cases.
+ - `tuple` → a small fixed record (a returned pair, a coordinate, a config row).
+ - `set` → uniqueness or membership tests (`"food" in cats`) — extremely fast.
+ - `dict` → a record with named fields → coming in Task 5.
 - Use `type(x)` and `len(x)` while learning; both are your best friends.
 
-📚 [Built-in types](https://docs.python.org/3/library/stdtypes.html) ·
+ [Built-in types](https://docs.python.org/3/library/stdtypes.html) ·
 [Data structures tutorial](https://docs.python.org/3/tutorial/datastructures.html) ·
 [Variables in Python (Real Python)](https://realpython.com/python-variables/) ·
 [Sets in Python](https://docs.python.org/3/tutorial/datastructures.html#sets)
 
 ---
 
-# Task 2 — Talking to the user ⏱ 15 min
+# Task 2 — Talking to the user 15 min
 
 ## Concept
 
@@ -302,14 +302,14 @@ Two essentials of any CLI app:
 - **`input(prompt)`** — reads a line of text the user types and returns it as a `str`.
 - **f-strings** — the modern, readable way to format strings: `f"Hello, {name}!"`.
 
-⚠️ `input()` always returns a **string**. If you want a number, convert it with `float(...)` or `int(...)`.
+ `input()` always returns a **string**. If you want a number, convert it with `float(...)` or `int(...)`.
 
 ## Starter code
 
 Replace your code with:
 
 ```python
-print("💰 Expense Tracker — add an expense")
+print(" Expense Tracker — add an expense")
 
 amount_str = input("Amount: ")
 amount = float(amount_str)
@@ -325,34 +325,34 @@ print(f"You spent €{amount:.2f} on {category}.")
 2. Notice the `{amount:.2f}` syntax — this forces **2 decimal digits**. Try changing it to `:.0f` or `:.4f` and re-run.
 3. Add a prompt for `date` and include it in the final message.
 4. Add a confirmation line at the bottom:
-   ```
-   Recorded: €12.50 — food — 2026-05-12
-   ```
-5. **Bonus:** strip whitespace from `category` with `.strip()` (try typing `  food  ` with spaces — what happens before and after `.strip()`?).
+ ```
+ Recorded: €12.50 — food — 2026-05-12
+ ```
+5. **Bonus:** strip whitespace from `category` with `.strip()` (try typing ` food ` with spaces — what happens before and after `.strip()`?).
 
-## ✅ Checkpoint
+## Checkpoint
 
 Example session:
 
 ```
-💰 Expense Tracker — add an expense
+ Expense Tracker — add an expense
 Amount: 12.50
 Category: food
 Date: 2026-05-12
 Recorded: €12.50 — food — 2026-05-12
 ```
 
-## 💡 Key takeaway
+## Key takeaway
 
 - `input()` reads strings; **convert** with `float()` / `int()` when you need numbers.
 - f-strings let you embed expressions and **format numbers** (e.g. `:.2f`) directly inside the string.
 - String methods like `.strip()`, `.upper()`, `.lower()` are how you clean user input.
 
-📚 [Input and Output](https://docs.python.org/3/tutorial/inputoutput.html) · [f-string mini-language](https://docs.python.org/3/library/string.html#formatspec) · [String methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+ [Input and Output](https://docs.python.org/3/tutorial/inputoutput.html) · [f-string mini-language](https://docs.python.org/3/library/string.html#formatspec) · [String methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
 
 ---
 
-# Task 3 — Tracking many expenses ⏱ 15 min
+# Task 3 — Tracking many expenses 15 min
 
 ## Concept
 
@@ -362,9 +362,9 @@ A **list** is an ordered, mutable sequence:
 
 ```python
 fruits = ["apple", "banana", "cherry"]
-fruits.append("date")       # add at end
-fruits[0]                   # "apple" — indexing starts at 0
-len(fruits)                 # 4
+fruits.append("date") # add at end
+fruits[0] # "apple" — indexing starts at 0
+len(fruits) # 4
 ```
 
 For now, we'll store each expense as a simple **3-tuple-like list**: `[amount, category, date]`.
@@ -373,7 +373,7 @@ For now, we'll store each expense as a simple **3-tuple-like list**: `[amount, c
 ## Starter code
 
 ```python
-print("💰 Expense Tracker — bulk add")
+print(" Expense Tracker — bulk add")
 
 # A list of expenses; each expense is a list of [amount, category, date]
 expenses = []
@@ -385,8 +385,8 @@ expenses.append([8.00, "food", "2026-05-12"])
 
 print(f"Total expenses recorded: {len(expenses)}")
 print(f"First expense: {expenses[0]}")
-print(f"Last expense:  {expenses[-1]}")
-print(f"All expenses:  {expenses}")
+print(f"Last expense: {expenses[-1]}")
+print(f"All expenses: {expenses}")
 ```
 
 ## Your task
@@ -397,25 +397,25 @@ print(f"All expenses:  {expenses}")
 4. Print the **amount** of the third expense (hint: nested indexing — `expenses[2][0]`).
 5. **Bonus:** use **slicing** to print the **first two** expenses with `expenses[:2]`.
 
-## ✅ Checkpoint
+## Checkpoint
 
 ```
 Total expenses recorded: 4
 First expense: [12.5, 'food', '2026-05-10']
-Last expense:  [<your fourth expense>]
+Last expense: [<your fourth expense>]
 ```
 
-## 💡 Key takeaway
+## Key takeaway
 
 - A **list** holds many items, in order. Index with `[i]`; negative indices count from the end.
 - `.append(x)` adds to the end. `len(...)` gives the count.
 - Lists can hold **anything** — including other lists.
 
-📚 [Lists tutorial](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists) · [Sequence operations](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
+ [Lists tutorial](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists) · [Sequence operations](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
 
 ---
 
-# Task 4 — A menu that keeps running ⏱ 20 min
+# Task 4 — A menu that keeps running 20 min
 
 ## Concept
 
@@ -432,44 +432,44 @@ Three control-flow tools:
 Replace your script with this. It's bigger — read it carefully before running.
 
 ```python
-print("💰 Expense Tracker")
+print(" Expense Tracker")
 
 # Pre-fill some data so we have something to list
 expenses = [
-    [12.50, "food", "2026-05-10"],
-    [45.00, "transport", "2026-05-11"],
-    [8.00, "food", "2026-05-12"],
+ [12.50, "food", "2026-05-10"],
+ [45.00, "transport", "2026-05-11"],
+ [8.00, "food", "2026-05-12"],
 ]
 
 menu = """
 What would you like to do?
-  1) Add an expense
-  2) List all expenses
-  3) Quit
+ 1) Add an expense
+ 2) List all expenses
+ 3) Quit
 """
 
 while True:
-    print(menu)
-    choice = input("Choice: ")
+ print(menu)
+ choice = input("Choice: ")
 
-    if choice == "1":
-        amount = float(input("  Amount: "))
-        category = input("  Category: ")
-        date = input("  Date (YYYY-MM-DD): ")
-        expenses.append([amount, category, date])
-        print(f"  ✅ Added.")
+ if choice == "1":
+ amount = float(input(" Amount: "))
+ category = input(" Category: ")
+ date = input(" Date (YYYY-MM-DD): ")
+ expenses.append([amount, category, date])
+ print(f" Added.")
 
-    elif choice == "2":
-        print(f"  You have {len(expenses)} expenses:")
-        for expense in expenses:
-            print(f"   - {expense}")
+ elif choice == "2":
+ print(f" You have {len(expenses)} expenses:")
+ for expense in expenses:
+ print(f" - {expense}")
 
-    elif choice == "3":
-        print("👋 Goodbye!")
-        break
+ elif choice == "3":
+ print(" Goodbye!")
+ break
 
-    else:
-        print("  ⚠️  Invalid choice, try again.")
+ else:
+ print(" Invalid choice, try again.")
 ```
 
 ## Your task
@@ -477,53 +477,53 @@ while True:
 1. Run the script. Try options 1, 2, and 3 in different orders.
 2. Add a **fourth menu option** `4) Show total` that uses a `for` loop to sum the `amount` of every expense and prints it.
 
-   Hint — the loop you need:
+ Hint — the loop you need:
 
 ```python
 total = 0
 for expense in expenses:
-    total = total + expense[0]      # amount is at index 0
+ total = total + expense[0] # amount is at index 0
 print(f"Total spent: €{total:.2f}")
 ```
 
 3. Improve the listing in option 2 to print one expense per line in a nice format:
 
-   ```
-   2026-05-10  food         €12.50
-   ```
+ ```
+ 2026-05-10 food €12.50
+ ```
 
-   You'll need an f-string with field widths like `f"{date:<12}{category:<12}€{amount:.2f}"`.
+ You'll need an f-string with field widths like `f"{date:<12}{category:<12}€{amount:.2f}"`.
 4. **Bonus:** what does the `else` branch do if the user types nothing and just presses Enter? Try it.
 
-## ✅ Checkpoint
+## Checkpoint
 
 A full session should look like:
 
 ```
-💰 Expense Tracker
+ Expense Tracker
 
 What would you like to do?
-  1) Add an expense
-  2) List all expenses
-  3) Show total
-  4) Quit
+ 1) Add an expense
+ 2) List all expenses
+ 3) Show total
+ 4) Quit
 
 Choice: 3
 Total spent: €65.50
 ```
 
-## 💡 Key takeaway
+## Key takeaway
 
 - `while True:` + `break` is the standard pattern for "loop until told to stop".
 - `for item in collection:` reads every element, in order.
 - `if` / `elif` / `else` branches — and **comparison uses `==`** (a single `=` is assignment).
 - Indentation matters: every block is defined by indentation, not braces.
 
-📚 [Control flow](https://docs.python.org/3/tutorial/controlflow.html) · [Boolean operations](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
+ [Control flow](https://docs.python.org/3/tutorial/controlflow.html) · [Boolean operations](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
 
 ---
 
-# Task 5 — Expenses with structure ⏱ 15 min
+# Task 5 — Expenses with structure 15 min
 
 ## Concept
 
@@ -533,14 +533,14 @@ A **dictionary** maps named keys to values:
 
 ```python
 expense = {
-    "amount": 12.50,
-    "category": "food",
-    "date": "2026-05-10",
+ "amount": 12.50,
+ "category": "food",
+ "date": "2026-05-10",
 }
 
-expense["amount"]              # 12.5
-expense["notes"] = "Lunch"     # add a new key
-list(expense.keys())           # ['amount', 'category', 'date', 'notes']
+expense["amount"] # 12.5
+expense["notes"] = "Lunch" # add a new key
+list(expense.keys()) # ['amount', 'category', 'date', 'notes']
 ```
 
 Dictionaries make code **self-documenting**: `expense["amount"]` is obvious; `expense[0]` is not.
@@ -550,17 +550,17 @@ Dictionaries make code **self-documenting**: `expense["amount"]` is obvious; `ex
 Refactor your `expenses` list to use dictionaries:
 
 ```python
-print("💰 Expense Tracker (v5: dictionaries)")
+print(" Expense Tracker (v5: dictionaries)")
 
 expenses = [
-    {"amount": 12.50, "category": "food",      "date": "2026-05-10"},
-    {"amount": 45.00, "category": "transport", "date": "2026-05-11"},
-    {"amount": 8.00,  "category": "food",      "date": "2026-05-12"},
+ {"amount": 12.50, "category": "food", "date": "2026-05-10"},
+ {"amount": 45.00, "category": "transport", "date": "2026-05-11"},
+ {"amount": 8.00, "category": "food", "date": "2026-05-12"},
 ]
 
 # Print every expense by its named fields
 for e in expenses:
-    print(f"  {e['date']:<12}{e['category']:<12}€{e['amount']:.2f}")
+ print(f" {e['date']:<12}{e['category']:<12}€{e['amount']:.2f}")
 ```
 
 ## Your task
@@ -569,9 +569,9 @@ for e in expenses:
 
 ```python
 expense = {
-    "amount": amount,
-    "category": category,
-    "date": date,
+ "amount": amount,
+ "category": category,
+ "date": date,
 }
 expenses.append(expense)
 ```
@@ -580,38 +580,38 @@ expenses.append(expense)
 3. Adapt the **listing** to use named keys (`e["date"]`, `e["category"]`, `e["amount"]`).
 4. Add a new menu option `4) Summary by category`. For each category, print the total spent.
 
-   Hint — the totals pattern:
+ Hint — the totals pattern:
 
 ```python
 totals = {}
 for e in expenses:
-    cat = e["category"]
-    totals[cat] = totals.get(cat, 0) + e["amount"]
+ cat = e["category"]
+ totals[cat] = totals.get(cat, 0) + e["amount"]
 
 for cat, amount in totals.items():
-    print(f"  {cat:<12} €{amount:.2f}")
+ print(f" {cat:<12} €{amount:.2f}")
 ```
 
-## ✅ Checkpoint
+## Checkpoint
 
 The "Summary by category" should look like:
 
 ```
-  food         €20.50
-  transport    €45.00
+ food €20.50
+ transport €45.00
 ```
 
-## 💡 Key takeaway
+## Key takeaway
 
 - A **dict** is `{key: value}`. Access with `dict[key]` or the safer `dict.get(key, default)`.
 - `.items()` gives `(key, value)` pairs for iteration.
 - Dictionaries are the natural representation of a "record" / "object" in Python — you'll see them everywhere (JSON, configs, API responses).
 
-📚 [Dictionaries tutorial](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) · [dict methods](https://docs.python.org/3/library/stdtypes.html#dict)
+ [Dictionaries tutorial](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) · [dict methods](https://docs.python.org/3/library/stdtypes.html#dict)
 
 ---
 
-# Task 6 — Clean code: functions ⏱ 20 min
+# Task 6 — Clean code: functions 20 min
 
 ## Concept
 
@@ -619,8 +619,8 @@ Your script is getting big. **Functions** let you give a name to a piece of logi
 
 ```python
 def greet(name):
-    """Return a friendly greeting."""
-    return f"Hello, {name}!"
+ """Return a friendly greeting."""
+ return f"Hello, {name}!"
 
 message = greet("World")
 print(message)
@@ -639,51 +639,51 @@ This is a **refactored skeleton** of the program. Your job is to fill in the fun
 
 ```python
 def add_expense(expenses):
-    """Prompt the user for one expense and append it to the list."""
-    # TODO: ask for amount, category, date; build a dict; append it.
-    pass
+ """Prompt the user for one expense and append it to the list."""
+ # TODO: ask for amount, category, date; build a dict; append it.
+ pass
 
 
 def list_expenses(expenses):
-    """Print all expenses in a formatted table."""
-    # TODO: loop and print each expense like in task 5.
-    pass
+ """Print all expenses in a formatted table."""
+ # TODO: loop and print each expense like in task 5.
+ pass
 
 
 def show_summary(expenses):
-    """Print total spent per category, plus an overall total."""
-    # TODO: build a totals dict, then print it.
-    pass
+ """Print total spent per category, plus an overall total."""
+ # TODO: build a totals dict, then print it.
+ pass
 
 
 def main():
-    expenses = []
-    menu = """
+ expenses = []
+ menu = """
 What would you like to do?
-  1) Add an expense
-  2) List all expenses
-  3) Show summary by category
-  4) Quit
+ 1) Add an expense
+ 2) List all expenses
+ 3) Show summary by category
+ 4) Quit
 """
-    while True:
-        print(menu)
-        choice = input("Choice: ").strip()
+ while True:
+ print(menu)
+ choice = input("Choice: ").strip()
 
-        if choice == "1":
-            add_expense(expenses)
-        elif choice == "2":
-            list_expenses(expenses)
-        elif choice == "3":
-            show_summary(expenses)
-        elif choice == "4":
-            print("👋 Goodbye!")
-            break
-        else:
-            print("⚠️  Invalid choice, try again.")
+ if choice == "1":
+ add_expense(expenses)
+ elif choice == "2":
+ list_expenses(expenses)
+ elif choice == "3":
+ show_summary(expenses)
+ elif choice == "4":
+ print(" Goodbye!")
+ break
+ else:
+ print(" Invalid choice, try again.")
 
 
 if __name__ == "__main__":
-    main()
+ main()
 ```
 
 ## Your task
@@ -694,35 +694,35 @@ if __name__ == "__main__":
 4. Run the program end-to-end.
 5. **Bonus:** add a `def total_by_category(expenses) -> dict:` helper function that **returns** the totals dictionary (no printing), and have `show_summary` call it. Notice how separating "compute" from "display" makes both pieces simpler.
 
-## ✅ Checkpoint
+## Checkpoint
 
 A clean run should look like:
 
 ```
 What would you like to do?
-  1) Add an expense
-  2) List all expenses
-  3) Show summary by category
-  4) Quit
+ 1) Add an expense
+ 2) List all expenses
+ 3) Show summary by category
+ 4) Quit
 
 Choice: 3
-  food         €20.50
-  transport    €45.00
-  TOTAL        €65.50
+ food €20.50
+ transport €45.00
+ TOTAL €65.50
 ```
 
-## 💡 Key takeaway
+## Key takeaway
 
 - `def name(args):` defines a function; `return value` sends a result back.
 - Functions that take a **list** (or dict) modify the same object in memory — caller sees the changes. No need to return.
 - `if __name__ == "__main__":` is Python's idiom for "only run `main()` when this file is executed directly", not when it's imported.
 - A good function does **one thing**, has a clear name, and ideally a docstring.
 
-📚 [Defining functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions) · [Type hints](https://docs.python.org/3/library/typing.html) · [Real Python: defining functions](https://realpython.com/defining-your-own-python-function/)
+ [Defining functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions) · [Type hints](https://docs.python.org/3/library/typing.html) · [Real Python: defining functions](https://realpython.com/defining-your-own-python-function/)
 
 ---
 
-# Task 7 — Save and load with JSON ⏱ 15 min
+# Task 7 — Save and load with JSON 15 min
 
 ## Concept
 
@@ -754,23 +754,23 @@ DATA_FILE = Path("expenses.json")
 
 
 def load_expenses():
-    """Load expenses from disk; return [] if the file doesn't exist."""
-    if not DATA_FILE.exists():
-        return []
-    with DATA_FILE.open("r", encoding="utf-8") as f:
-        return json.load(f)
+ """Load expenses from disk; return [] if the file doesn't exist."""
+ if not DATA_FILE.exists():
+ return []
+ with DATA_FILE.open("r", encoding="utf-8") as f:
+ return json.load(f)
 
 
 def save_expenses(expenses):
-    """Write all expenses to disk as pretty JSON."""
-    with DATA_FILE.open("w", encoding="utf-8") as f:
-        json.dump(expenses, f, indent=2)
+ """Write all expenses to disk as pretty JSON."""
+ with DATA_FILE.open("w", encoding="utf-8") as f:
+ json.dump(expenses, f, indent=2)
 ```
 
 ## Your task
 
 1. In `main()`, replace `expenses = []` with `expenses = load_expenses()`.
-   Print something like `"Loaded N expenses"` so the user sees the count.
+ Print something like `"Loaded N expenses"` so the user sees the count.
 2. Change menu option `4` from `Quit` to `Save and quit`, and call `save_expenses(expenses)` before breaking.
 3. In `add_expense`, **stop asking** for the date manually — use `datetime` to fill it in automatically. Replace the `"date": date,` line in your expense dict with:
 
@@ -781,32 +781,32 @@ def save_expenses(expenses):
 5. **Open `expenses.json`** in your editor — see how your data is stored.
 6. **Run the program again** — your previous expenses should reload automatically.
 
-## ✅ Checkpoint
+## Checkpoint
 
 Two consecutive runs should look like:
 
 ```
 $ python3 expense_tracker.py
-💰 Expense Tracker — loaded 0 existing expenses
+ Expense Tracker — loaded 0 existing expenses
 ... add a couple, save and quit ...
 
 $ python3 expense_tracker.py
-💰 Expense Tracker — loaded 2 existing expenses
+ Expense Tracker — loaded 2 existing expenses
 ```
 
 And `expenses.json` should contain something like:
 
 ```json
 [
-  {
-    "amount": 12.5,
-    "category": "food",
-    "date": "2026-05-12"
-  }
+ {
+ "amount": 12.5,
+ "category": "food",
+ "date": "2026-05-12"
+ }
 ]
 ```
 
-## 💡 Key takeaway
+## Key takeaway
 
 - **The standard library is huge.** `import` a module, call its functions.
 - `json.dump(obj, file)` writes; `json.load(file)` reads. Python data structures (`dict`, `list`, `str`, `int`, `float`, `bool`, `None`) map cleanly to JSON.
@@ -814,11 +814,11 @@ And `expenses.json` should contain something like:
 - `pathlib.Path` is the modern alternative to messy string-based paths.
 - `datetime.now().strftime(...)` formats the current date/time as a string.
 
-📚 [json module](https://docs.python.org/3/library/json.html) · [pathlib](https://docs.python.org/3/library/pathlib.html) · [datetime](https://docs.python.org/3/library/datetime.html) · [Reading and writing files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+ [json module](https://docs.python.org/3/library/json.html) · [pathlib](https://docs.python.org/3/library/pathlib.html) · [datetime](https://docs.python.org/3/library/datetime.html) · [Reading and writing files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
 
 ---
 
-# Task 8 — The `json` library in depth ⏱ 15 min
+# Task 8 — The `json` library in depth 15 min
 
 ## Concept
 
@@ -826,27 +826,27 @@ In Task 7 we used `json.load` and `json.dump` to read and write our expenses fil
 
 The module has **four core functions**, all built around the same idea — converting between **Python objects** and **JSON text**:
 
-| Function       | Direction                  | Works with     |
+| Function | Direction | Works with |
 |----------------|----------------------------|----------------|
-| `json.dumps`   | Python → JSON **string**   | An in-memory string |
-| `json.loads`   | JSON **string** → Python   | An in-memory string |
-| `json.dump`    | Python → JSON **file**     | An open file object |
-| `json.load`    | JSON **file** → Python     | An open file object |
+| `json.dumps` | Python → JSON **string** | An in-memory string |
+| `json.loads` | JSON **string** → Python | An in-memory string |
+| `json.dump` | Python → JSON **file** | An open file object |
+| `json.load` | JSON **file** → Python | An open file object |
 
 The `s` suffix means **"string"**. The functions without `s` work directly with files.
 
 ### Python ↔ JSON type mapping
 
-| Python                  | JSON         |
+| Python | JSON |
 |-------------------------|--------------|
-| `dict`                  | object       |
-| `list`, `tuple`         | array        |
-| `str`                   | string       |
-| `int`, `float`          | number       |
-| `True` / `False`        | true / false |
-| `None`                  | null         |
+| `dict` | object |
+| `list`, `tuple` | array |
+| `str` | string |
+| `int`, `float` | number |
+| `True` / `False` | true / false |
+| `None` | null |
 
-> ⚠️ **Watch out:** `datetime`, `set`, custom classes are **not** JSON-serializable out of the box — you'll get `TypeError`. Convert them to strings, lists, or dicts first. That's why in Task 7 we stored the date as `"2026-05-12"` (a string), not a `datetime` object.
+> **Watch out:** `datetime`, `set`, custom classes are **not** JSON-serializable out of the box — you'll get `TypeError`. Convert them to strings, lists, or dicts first. That's why in Task 7 we stored the date as `"2026-05-12"` (a string), not a `datetime` object.
 
 ## Starter code — work in a separate file
 
@@ -857,12 +857,12 @@ import json
 
 # === 1) Python object → JSON string with dumps ===
 expense = {
-    "amount": 12.50,
-    "category": "food",
-    "date": "2026-05-12",
-    "tags": ["lunch", "weekday"],
-    "is_recurring": False,
-    "notes": None,
+ "amount": 12.50,
+ "category": "food",
+ "date": "2026-05-12",
+ "tags": ["lunch", "weekday"],
+ "is_recurring": False,
+ "notes": None,
 }
 
 # Compact (default): single line, minimal whitespace
@@ -883,14 +883,14 @@ parsed = json.loads(raw_text)
 
 print("Parsed type :", type(parsed))
 print("Parsed value:", parsed)
-print("Name field  :", parsed["name"])
-print("First tag   :", parsed["tags"][0])
+print("Name field :", parsed["name"])
+print("First tag :", parsed["tags"][0])
 ```
 
 ## Your task
 
 1. **Run the script** and study the output carefully.
-   Notice that the compact form puts `null`/`true`/`false` (JSON spelling), not `None`/`True`/`False` (Python spelling). The `json` module did the translation for you.
+ Notice that the compact form puts `null`/`true`/`false` (JSON spelling), not `None`/`True`/`False` (Python spelling). The `json` module did the translation for you.
 
 2. **Round-trip test.** Convert `expense` to a string with `dumps`, then back to a dict with `loads`. Assert they're equal:
 
@@ -898,7 +898,7 @@ print("First tag   :", parsed["tags"][0])
 text = json.dumps(expense)
 restored = json.loads(text)
 assert restored == expense, "Round-trip failed!"
-print("✅ Round-trip OK")
+print(" Round-trip OK")
 ```
 
 3. **Save and reload a list.** Build a list of three expense dicts, write it to `practice.json` with `json.dump`, then in a fresh `with open(...)` read it back with `json.load` and print how many items you got.
@@ -907,20 +907,20 @@ print("✅ Round-trip OK")
 
 ```json
 {
-  "users": [
-    {"name": "Alice",  "score": 87},
-    {"name": "Bob",    "score": 92},
-    {"name": "Carla",  "score": 78}
-  ],
-  "timestamp": "2026-05-12T09:30:00"
+ "users": [
+ {"name": "Alice", "score": 87},
+ {"name": "Bob", "score": 92},
+ {"name": "Carla", "score": 78}
+ ],
+ "timestamp": "2026-05-12T09:30:00"
 }
 ```
 
-   Hint:
+ Hint:
 
 ```python
 with open("sample_input.json", "r", encoding="utf-8") as f:
-    data = json.load(f)
+ data = json.load(f)
 
 print("Loaded", len(data["users"]), "users")
 top = max(data["users"], key=lambda u: u["score"])
@@ -933,13 +933,13 @@ print(f"Top scorer: {top['name']} with {top['score']}")
 
 ```python
 data = {"city": "Café Roma", "owner": "Józef"}
-print(json.dumps(data))                                # default: escapes accents
-print(json.dumps(data, ensure_ascii=False))            # preserves accents
+print(json.dumps(data)) # default: escapes accents
+print(json.dumps(data, ensure_ascii=False)) # preserves accents
 ```
 
-   The second form is usually what you want for human-readable output.
+ The second form is usually what you want for human-readable output.
 
-## ✅ Checkpoint
+## Checkpoint
 
 Your script should print something like:
 
@@ -949,9 +949,9 @@ Compact JSON:
 
 Pretty JSON:
 {
-  "amount": 12.5,
-  "category": "food",
-  ...
+ "amount": 12.5,
+ "category": "food",
+ ...
 }
 
 Parsed type : <class 'dict'>
@@ -963,7 +963,7 @@ And `json.dumps({1, 2, 3})` should fail with:
 TypeError: Object of type set is not JSON serializable
 ```
 
-## 💡 Key takeaway
+## Key takeaway
 
 - The `json` module is **the bridge between Python and the outside world**. Configs, APIs, log files, browser data — everything uses JSON.
 - Four functions, one rule: **`s` for strings, no `s` for files**. `dumps`/`loads` and `dump`/`load`.
@@ -971,7 +971,7 @@ TypeError: Object of type set is not JSON serializable
 - JSON only knows a small set of types. Anything fancier (`datetime`, `set`, custom objects) must be **converted to a JSON-friendly form first**.
 - Use `ensure_ascii=False` if your data has accents or non-Latin characters — otherwise JSON escapes them with `\uXXXX`.
 
-📚 [json module](https://docs.python.org/3/library/json.html) ·
+ [json module](https://docs.python.org/3/library/json.html) ·
 [json.dumps options](https://docs.python.org/3/library/json.html#json.dumps) ·
 [Python ↔ JSON type table](https://docs.python.org/3/library/json.html#py-to-json-table) ·
 [Real Python: Working with JSON Data](https://realpython.com/python-json/) ·
@@ -979,7 +979,7 @@ TypeError: Object of type set is not JSON serializable
 
 ---
 
-# Task 9 — Bonus: Handle the unexpected ⏱ optional
+# Task 9 — Bonus: Handle the unexpected optional
 
 ## Concept
 
@@ -989,89 +989,89 @@ A robust CLI handles bad input gracefully with **`try` / `except`**:
 
 ```python
 try:
-    amount = float(input("Amount: "))
+ amount = float(input("Amount: "))
 except ValueError:
-    print("❌ That's not a valid number — try again.")
-    return
+ print(" That's not a valid number — try again.")
+ return
 ```
 
 ## Your task
 
 1. Wrap the `float(input(...))` in `add_expense` with `try` / `except ValueError`.
-   On failure, print a friendly message and **return early** (don't append).
+ On failure, print a friendly message and **return early** (don't append).
 2. In `load_expenses`, handle the case where `expenses.json` exists but is **corrupted** (not valid JSON). Wrap the `json.load(f)` call like this:
 
 ```python
 try:
-    return json.load(f)
+ return json.load(f)
 except json.JSONDecodeError:
-    print("⚠️  Couldn't read expenses file — starting fresh.")
-    return []
+ print(" Couldn't read expenses file — starting fresh.")
+ return []
 ```
 3. **Test it!** Open `expenses.json` in your editor, type some garbage, save, and re-run.
 4. **Bonus:** validate that `amount > 0` and reject negative or zero amounts with a helpful message.
 
-## 💡 Key takeaway
+## Key takeaway
 
 - `try` / `except` lets your program **survive errors** instead of crashing.
 - Catch **specific exceptions** (`ValueError`, `FileNotFoundError`, …) — not the bare `except:` (which hides real bugs).
 - Validating input at the boundary is the easiest way to keep the rest of the code clean.
 
-📚 [Errors and exceptions](https://docs.python.org/3/tutorial/errors.html) · [Built-in exceptions](https://docs.python.org/3/library/exceptions.html)
+ [Errors and exceptions](https://docs.python.org/3/tutorial/errors.html) · [Built-in exceptions](https://docs.python.org/3/library/exceptions.html)
 
 ---
 
-# 🎓 Wrap-up
+# Wrap-up
 
 In about 2 to 2½ hours you built a real CLI application, set up a clean Python environment, and refreshed the entire core of the language:
 
-| What you used                          | Where it appeared                                |
+| What you used | Where it appeared |
 |----------------------------------------|--------------------------------------------------|
-| Virtual environment + `requirements.txt` | Setup                                          |
-| Running a script                       | Task 0                                           |
-| Scalar types, collection types (list/tuple/set), `type()` | Task 1                        |
-| `input()`, f-strings, formatting       | Task 2                                           |
-| Lists, indexing, slicing               | Task 3                                           |
-| `while`, `for`, `if/elif/else`         | Task 4                                           |
-| Dictionaries, `.get()`, `.items()`     | Task 5                                           |
-| Functions, `def`, `return`             | Task 6                                           |
-| Modules (`json`, `datetime`, `pathlib`), file I/O with `with open(...)` | Task 7          |
-| `json.dumps`/`loads`, pretty-printing, external JSON files | Task 8                       |
-| `try` / `except`                       | Task 9                                           |
+| Virtual environment + `requirements.txt` | Setup |
+| Running a script | Task 0 |
+| Scalar types, collection types (list/tuple/set), `type()` | Task 1 |
+| `input()`, f-strings, formatting | Task 2 |
+| Lists, indexing, slicing | Task 3 |
+| `while`, `for`, `if/elif/else` | Task 4 |
+| Dictionaries, `.get()`, `.items()` | Task 5 |
+| Functions, `def`, `return` | Task 6 |
+| Modules (`json`, `datetime`, `pathlib`), file I/O with `with open(...)` | Task 7 |
+| `json.dumps`/`loads`, pretty-printing, external JSON files | Task 8 |
+| `try` / `except` | Task 9 |
 
 ## Where to go next
 
 - **Comprehensions:** `[e["amount"] for e in expenses if e["category"] == "food"]` — Python's expressive one-liners.
-  → [List comprehensions tutorial](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
+ → [List comprehensions tutorial](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
 - **Classes and objects:** turn your `expense` dict into an `Expense` class.
-  → [Classes tutorial](https://docs.python.org/3/tutorial/classes.html)
+ → [Classes tutorial](https://docs.python.org/3/tutorial/classes.html)
 - **Testing:** write `test_expense_tracker.py` with `pytest` and verify `total_by_category` works.
-  → [pytest getting started](https://docs.pytest.org/en/stable/getting-started.html)
+ → [pytest getting started](https://docs.pytest.org/en/stable/getting-started.html)
 - **Packaging:** turn your script into something you can `pip install`.
-  → [Python packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+ → [Python packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 - **A CLI library:** rewrite the menu with [Typer](https://typer.tiangolo.com/) or [Click](https://click.palletsprojects.com/) for proper command-line flags.
 
 ---
 
-## 📚 Resources
+## Resources
 
-| Topic                  | Link                                                                       |
+| Topic | Link |
 |------------------------|----------------------------------------------------------------------------|
-| Official tutorial      | [docs.python.org/3/tutorial](https://docs.python.org/3/tutorial/)          |
-| Standard library       | [docs.python.org/3/library](https://docs.python.org/3/library/)            |
-| venv module            | [docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html) |
-| pip user guide         | [pip.pypa.io](https://pip.pypa.io/en/stable/user_guide/)                   |
-| Style guide (PEP 8)    | [peps.python.org/pep-0008](https://peps.python.org/pep-0008/)              |
-| Real Python            | [realpython.com](https://realpython.com/)                                  |
-| Python cheatsheet      | [python-cheatsheet.readthedocs.io](https://python-cheatsheet.readthedocs.io/) |
+| Official tutorial | [docs.python.org/3/tutorial](https://docs.python.org/3/tutorial/) |
+| Standard library | [docs.python.org/3/library](https://docs.python.org/3/library/) |
+| venv module | [docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html) |
+| pip user guide | [pip.pypa.io](https://pip.pypa.io/en/stable/user_guide/) |
+| Style guide (PEP 8) | [peps.python.org/pep-0008](https://peps.python.org/pep-0008/) |
+| Real Python | [realpython.com](https://realpython.com/) |
+| Python cheatsheet | [python-cheatsheet.readthedocs.io](https://python-cheatsheet.readthedocs.io/) |
 | f-string mini-language | [docs.python.org/3/library/string.html#formatspec](https://docs.python.org/3/library/string.html#formatspec) |
-| JSON module            | [docs.python.org/3/library/json.html](https://docs.python.org/3/library/json.html) |
-| pathlib                | [docs.python.org/3/library/pathlib.html](https://docs.python.org/3/library/pathlib.html) |
-| pytest                 | [docs.pytest.org](https://docs.pytest.org/)                                |
+| JSON module | [docs.python.org/3/library/json.html](https://docs.python.org/3/library/json.html) |
+| pathlib | [docs.python.org/3/library/pathlib.html](https://docs.python.org/3/library/pathlib.html) |
+| pytest | [docs.pytest.org](https://docs.pytest.org/) |
 
 ---
 
-## ✅ What to hand in
+## What to hand in
 
 If the workshop is graded or reviewed, hand in:
 
@@ -1081,4 +1081,4 @@ If the workshop is graded or reviewed, hand in:
 - Your `requirements.txt` (even if empty — it shows you set up the venv properly).
 - A short paragraph (in `notes.md`) on **the concept that felt most unclear** and one thing you'd like to deepen next.
 
-> 🙌 **Great job!** You now have a working Python app, a refreshed mental model of the language, and a clear path forward. Keep the file — you'll want to extend it.
+> **Great job!** You now have a working Python app, a refreshed mental model of the language, and a clear path forward. Keep the file — you'll want to extend it.
